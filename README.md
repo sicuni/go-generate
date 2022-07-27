@@ -1,7 +1,7 @@
 ## go-generate
 **安装：** 
 ```azure
-go get github.com/sicuni/generate
+go get github.com/sicuni/go-generate
 ```
 自动生成model、dao代码
 

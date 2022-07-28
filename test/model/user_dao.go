@@ -105,7 +105,15 @@ func (dao UserDao) SelectMaps(wrap *UserWrapper) (list []map[string]interface{},
 		m := make(map[string]interface{})
 		obj := user
 		m["Id"] = obj.Id
+		m["CreatedAt"] = obj.CreatedAt
+		m["UpdatedAt"] = obj.UpdatedAt
+		m["DeletedAt"] = obj.DeletedAt
 		m["UserName"] = obj.UserName
+		m["UserType"] = obj.UserType
+		m["Password"] = obj.Password
+		m["UserStatus"] = obj.UserStatus
+		m["CreateUserId"] = obj.CreateUserId
+		m["ClusterId"] = obj.ClusterId
 
 		list = append(list, m)
 	}

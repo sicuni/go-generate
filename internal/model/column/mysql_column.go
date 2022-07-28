@@ -35,6 +35,14 @@ func (c *MysqlColumn) IsPrimaryKey() bool {
 	return c != nil && c.ColumnKey == "PRI"
 }
 
+func (c *MysqlColumn) IsUniqueKey() bool {
+	return c != nil && c.ColumnKey == "UNI"
+}
+
+func (c *MysqlColumn) IsMulKey() bool {
+	return c != nil && c.ColumnKey == "MUL"
+}
+
 func (c *MysqlColumn) IsAutoIncrement() bool {
 	return c != nil && c.Extra == "auto_increment"
 }
@@ -47,6 +55,10 @@ func (c *MysqlColumn) buildGormTag() string {
 		if !c.IsAutoIncrement() {
 			buf.WriteString(";autoIncrement:false")
 		}
+	} else if c.IsUniqueKey(){
+		buf.WriteString(";unique")
+	} else if c.IsMulKey() {
+		buf.WriteString(";index")
 	} else if c.IsNullable != "YES" {
 		buf.WriteString(";not null")
 	}

@@ -2,12 +2,22 @@
 
 package model
 
+import "time"
+
 const TableNameUser = "user"
 
 // User mapped from table &lt;user>
 type User struct {
-	Id       int32  `gorm:"column:id;type:int;primaryKey;autoIncrement:false" json:"id"`
-	UserName string `gorm:"column:user_name;type:varchar(20);not null" json:"user_name"`
+	Id           int32     `gorm:"column:id;type:int;primaryKey;autoIncrement:false" json:"id"`
+	CreatedAt    time.Time `gorm:"column:created_at;type:datetime(3)" json:"created_at"`
+	UpdatedAt    time.Time `gorm:"column:updated_at;type:datetime(3)" json:"updated_at"`
+	DeletedAt    time.Time `gorm:"column:deleted_at;type:datetime(3);index" json:"deleted_at"`
+	UserName     string    `gorm:"column:user_name;type:varchar(32);unique" json:"user_name"`
+	UserType     string    `gorm:"column:user_type;type:varchar(64);not null" json:"user_type"`
+	Password     string    `gorm:"column:password;type:varchar(64);not null" json:"password"`
+	UserStatus   string    `gorm:"column:user_status;type:varchar(64);not null" json:"user_status"`
+	CreateUserId int64     `gorm:"column:create_user_id;type:bigint unsigned;not null" json:"create_user_id"`
+	ClusterId    int64     `gorm:"column:cluster_id;type:bigint unsigned;not null" json:"cluster_id"`
 }
 
 // TableName User's table name

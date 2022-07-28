@@ -5,6 +5,9 @@ import (
 	go_generate "go-generate"
 	"go-generate/config"
 	"go-generate/database"
+	"go-generate/test/model"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 	"testing"
 )
 
@@ -20,4 +23,14 @@ func TestGenBaseStructs(t *testing.T) {
 	if err := gen.Execute(); err != nil {
 		fmt.Println(err)
 	}
+
+}
+
+func TestCreateDB(t *testing.T) {
+	db, _ := gorm.Open(mysql.Open(MysqlConnectstring))
+	err := db.AutoMigrate(
+		&model.User{},
+	)
+	fmt.Println(err)
+	return
 }

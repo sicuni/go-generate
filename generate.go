@@ -1,9 +1,9 @@
 package go_generate
 
 import (
-	"go-generate/config"
-	"go-generate/database"
-	"go-generate/internal/struct"
+	"github.com/sicuni/go-generate/config"
+	"github.com/sicuni/go-generate/database"
+	"github.com/sicuni/go-generate/internal/struct"
 )
 
 type Generator struct {

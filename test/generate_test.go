@@ -2,10 +2,10 @@ package test
 
 import (
 	"fmt"
-	go_generate "go-generate"
-	"go-generate/config"
-	"go-generate/database"
-	"go-generate/test/model"
+	go_generate "github.com/sicuni/go-generate"
+	"github.com/sicuni/go-generate/config"
+	"github.com/sicuni/go-generate/database"
+	"github.com/sicuni/go-generate/test/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"testing"

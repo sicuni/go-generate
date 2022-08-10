@@ -2,7 +2,7 @@ package database
 
 import (
 	"fmt"
-	"go-generate/internal/model"
+	"github.com/sicuni/go-generate/internal/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

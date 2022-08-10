@@ -3,9 +3,9 @@ package go_generate
 import (
 	"bytes"
 	"fmt"
-	"go-generate/config"
-	"go-generate/internal/struct"
-	"go-generate/internal/tmpl"
+	"github.com/sicuni/go-generate/config"
+	"github.com/sicuni/go-generate/internal/struct"
+	"github.com/sicuni/go-generate/internal/tmpl"
 	"golang.org/x/tools/imports"
 	"html/template"
 	"io"

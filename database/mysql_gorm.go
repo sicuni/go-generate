@@ -1,8 +1,8 @@
 package database
 
 import (
-	"go-generate/internal/model"
-	"go-generate/internal/model/column"
+	"github.com/sicuni/go-generate/internal/model"
+	"github.com/sicuni/go-generate/internal/model/column"
 	"gorm.io/gorm"
 )
 

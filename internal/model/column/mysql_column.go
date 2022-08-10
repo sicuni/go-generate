@@ -3,7 +3,7 @@ package column
 import (
 	"bytes"
 	"fmt"
-	"go-generate/internal/model"
+	"github.com/sicuni/go-generate/internal/model"
 )
 
 type MysqlColumn struct {

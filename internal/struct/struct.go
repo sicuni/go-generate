@@ -2,8 +2,8 @@ package _struct
 
 import (
 	"fmt"
-	"go-generate/database"
-	"go-generate/internal/model"
+	"github.com/sicuni/go-generate/database"
+	"github.com/sicuni/go-generate/internal/model"
 	"regexp"
 	"strings"
 )
